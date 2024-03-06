@@ -2,6 +2,17 @@
     "name": "solid-daisy",
     "version": "1.0.0",
     "type": "module",
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "browser": {},
+    "exports": {
+        "import": {
+            "types": "./dist/index.d.ts",
+            "default": "./dist/index.js"
+        }
+    },
+    "typesVersions": {},
     "scripts": {
         "build": "tsup"
     },
@@ -26,16 +37,5 @@
         "class-variance-authority": "^0.7.0",
         "solid-controlled-input": "^4.0.0",
         "tailwind-merge": "^2.2.1"
-    },
-    "main": "./dist/index.js",
-    "module": "./dist/index.js",
-    "types": "./dist/index.d.ts",
-    "browser": {},
-    "exports": {
-        "import": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/index.js"
-        }
-    },
-    "typesVersions": {}
+    }
 }
