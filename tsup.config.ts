@@ -16,9 +16,7 @@ export default defineConfig(config => {
     if (!watching) {
         const packageFields = preset.generatePackageExports(parsedData);
 
-        console.log(
-            `\npackage.json: \n${JSON.stringify(packageFields, null, 2)}\n\n`
-        );
+        console.log(`\npackage.json: \n${JSON.stringify(packageFields, null, 2)}\n\n`);
 
         /*
             will update ./package.json with the correct export fields

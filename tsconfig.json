@@ -11,6 +11,7 @@
 
         "jsx": "preserve",
 
+        "outDir": "./dist",
         "rootDir": "./src",
         "baseUrl": "./src",
 
