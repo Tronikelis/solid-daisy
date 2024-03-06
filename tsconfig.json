@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "moduleResolution": "Bundler",
+        "module": "ESNext",
+
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+
+        "jsx": "preserve",
+
+        "rootDir": "./src",
+        "baseUrl": "./src",
+
+        "jsxImportSource": "solid-js",
+
+        "paths": {
+            "~/*": ["./*"]
+        }
+    },
+
+    "include": ["./src"]
+}
