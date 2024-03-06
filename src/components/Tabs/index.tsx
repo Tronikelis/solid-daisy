@@ -1,8 +1,7 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { SelectableSize } from "~/types/props";
-import { MiniSetter, PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { MiniSetter, PropsWith, RequireChildren, SelectableSize } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 import { TabsContext } from "./context";
 

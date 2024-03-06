@@ -7,7 +7,7 @@ const group = cva("flex flex-row items-center gap-4");
 
 type Props = PropsWith<CvaProps<typeof group>, [ComponentProps<"div">]>;
 
-export default function Group(props: RequireChildren<Props>) {
+export function Group(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, ["class", "children"]);
 
     return (

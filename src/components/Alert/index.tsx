@@ -1,9 +1,9 @@
 import { ComponentProps, createSignal, JSX, Show, splitProps } from "solid-js";
 
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { PropsWith, RequireChildren } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
-import Button from "../Button";
+import { Button } from "../";
 
 const alert = cva("alert", {
     variants: {
@@ -23,7 +23,7 @@ type Props = PropsWith<
     [CvaProps<typeof alert>, ComponentProps<"div">]
 >;
 
-export default function Alert(props: RequireChildren<Props>) {
+export function Alert(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, ["icon", "class", "children", "color"]);
 
     const [show, setShow] = createSignal(true);

@@ -29,7 +29,7 @@ const link = cva("link", {
 
 type Props = PropsWith<CvaProps<typeof link>, [ComponentProps<"a">]>;
 
-export default function Link(props: RequireChildren<Props>) {
+export function Link(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, [
         "hover",
         "color",

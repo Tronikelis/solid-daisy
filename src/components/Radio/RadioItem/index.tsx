@@ -3,9 +3,9 @@ import { mergeRefs } from "@solid-primitives/refs";
 import { ControlledInput } from "solid-controlled-input";
 import { ComponentProps, splitProps, useContext } from "solid-js";
 
-import Group from "~/components/Group";
-import { ForbidChildren, PropsWith, WrapperProps } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { Group } from "~/components";
+import { ForbidChildren, PropsWith, WrapperProps } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 import { RadioContext } from "../context";
 

@@ -4,8 +4,7 @@ import { ComponentProps, JSX, splitProps } from "solid-js";
 import { ForbidChildren, PropsWith, WrapperProps } from "~/types/utils";
 import { cva, CvaProps, cx } from "~/utils/cva";
 
-import Group from "../Group";
-import Stack from "../Stack";
+import { Group, Stack } from "../";
 
 const container = cva("input h-auto", {
     variants: {
@@ -51,7 +50,7 @@ type Props = PropsWith<
     [CvaProps<typeof container>, ComponentProps<typeof ControlledInput>]
 >;
 
-export default function Input(props: ForbidChildren<Props>) {
+export function Input(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, [
         "label",
         "bordered",

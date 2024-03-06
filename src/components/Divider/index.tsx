@@ -14,7 +14,7 @@ const divider = cva("divider m-0", {
 
 type Props = PropsWith<CvaProps<typeof divider>, [ComponentProps<"div">]>;
 
-export default function Divider(props: ForbidChildren<Props>) {
+export function Divider(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, ["vertical", "class"]);
 
     return (

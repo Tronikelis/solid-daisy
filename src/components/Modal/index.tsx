@@ -1,9 +1,8 @@
 import { mergeRefs } from "@solid-primitives/refs";
 import { ComponentProps, createEffect, createUniqueId, splitProps } from "solid-js";
 
-import useClickOutside from "~/hooks/useClickOutside";
-import useRef from "~/hooks/useRef";
-import { MiniSetter, PropsWith, RequireChildren } from "~/types/utils";
+import { useClickOutside, useRef } from "~/hooks";
+import { MiniSetter, PropsWith, RequireChildren } from "~/types";
 
 type Props = PropsWith<
     {
@@ -13,7 +12,7 @@ type Props = PropsWith<
     [ComponentProps<"div">]
 >;
 
-export default function Modal(props: RequireChildren<Props>) {
+export function Modal(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, ["open", "setOpen", "children", "ref"]);
 
     const [dialogRef, setDialogRef] = useRef<HTMLDivElement>();

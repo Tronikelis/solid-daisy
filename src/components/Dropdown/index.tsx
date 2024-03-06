@@ -12,10 +12,9 @@ import { createEventListener } from "@solid-primitives/event-listener";
 import { mergeRefs } from "@solid-primitives/refs";
 import { ComponentProps, createEffect, createSignal, onCleanup, splitProps } from "solid-js";
 
-import useClickOutside from "~/hooks/useClickOutside";
-import useRef from "~/hooks/useRef";
-import { MaybeAccessor, PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps, cx } from "~/utils/cva";
+import { useClickOutside, useRef } from "~/hooks";
+import { MaybeAccessor, PropsWith, RequireChildren } from "~/types";
+import { cva, CvaProps, cx } from "~/utils";
 
 const dropdown = cva(
     "fixed left-0 top-0 z-[3000] rounded-box border-2 border-base-200 bg-base-100 opacity-0 shadow transition-opacity duration-200"
@@ -34,7 +33,7 @@ type Props = PropsWith<
     [ComponentProps<"div">, CvaProps<typeof dropdown>]
 >;
 
-export default function Dropdown(props: RequireChildren<Props>) {
+export function Dropdown(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, [
         "targetRef",
         "fullWidth",

@@ -15,17 +15,11 @@ import {
     splitProps,
 } from "solid-js";
 
-import useClickOutside from "~/hooks/useClickOutside";
-import useRef from "~/hooks/useRef";
-import { ForbidChildren, MiniSetter, PropsWith } from "~/types/utils";
-import clamp from "~/utils/clamp";
-import { cx } from "~/utils/cva";
+import { useClickOutside, useRef } from "~/hooks";
+import { ForbidChildren, MiniSetter, PropsWith } from "~/types";
+import { clamp, cx } from "~/utils";
 
-import Badge from "../Badge";
-import Dropdown from "../Dropdown";
-import Input from "../Input";
-import Stack from "../Stack";
-import Text from "../Text";
+import { Badge, Dropdown, Input, Stack, Text } from "../";
 
 export type ItemLike = {
     value: string;
@@ -53,7 +47,7 @@ type Props<T extends ItemLike> = PropsWith<
     [ComponentProps<typeof Input>]
 >;
 
-export default function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>) {
+export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>) {
     const [local, others] = splitProps(props, [
         "value",
         "setValue",

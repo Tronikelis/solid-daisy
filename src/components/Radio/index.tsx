@@ -1,10 +1,15 @@
-import { ComponentProps, Setter, splitProps } from "solid-js";
+import { ComponentProps, splitProps } from "solid-js";
 
-import { SelectableColor, SelectableSize } from "~/types/props";
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cx } from "~/utils/cva";
+import {
+    MiniSetter,
+    PropsWith,
+    RequireChildren,
+    SelectableColor,
+    SelectableSize,
+} from "~/types";
+import { cx } from "~/utils";
 
-import Stack from "../Stack";
+import { Stack } from "../";
 
 import { RadioContext } from "./context";
 

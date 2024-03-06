@@ -1,7 +1,7 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { PropsWith, RequireChildren } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 const badge = cva("badge truncate whitespace-nowrap", {
     variants: {
@@ -30,7 +30,7 @@ const badge = cva("badge truncate whitespace-nowrap", {
 
 type Props = PropsWith<CvaProps<typeof badge>, [ComponentProps<"span">]>;
 
-export default function Badge(props: RequireChildren<Props>) {
+export function Badge(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, [
         "color",
         "size",

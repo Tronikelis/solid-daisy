@@ -4,8 +4,7 @@ import { SelectableSize } from "~/types/props";
 import { ForbidChildren, MiniSetter, PropsWith } from "~/types/utils";
 import { cva, CvaProps } from "~/utils/cva";
 
-import Button from "../Button";
-import Group from "../Group";
+import { Button, Group } from "../";
 
 import IconButton from "./IconButton";
 import PaginationItem from "./PaginationItem";
@@ -32,7 +31,7 @@ type Props = PropsWith<
     [CvaProps<typeof pagination>, ComponentProps<typeof Group>]
 >;
 
-export default function Pagination(_props: ForbidChildren<Props>) {
+export function Pagination(_props: ForbidChildren<Props>) {
     const DOTS = "dots" as const;
     type Range = (number | typeof DOTS)[];
 

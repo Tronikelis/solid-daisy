@@ -2,8 +2,8 @@ import { createEventListener } from "@solid-primitives/event-listener";
 import { mergeRefs } from "@solid-primitives/refs";
 import { ComponentProps, splitProps, useContext } from "solid-js";
 
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps, cx } from "~/utils/cva";
+import { PropsWith, RequireChildren } from "~/types";
+import { cva, CvaProps, cx } from "~/utils";
 
 import { TabsContext } from "../context";
 

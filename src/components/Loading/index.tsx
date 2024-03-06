@@ -16,7 +16,7 @@ const loading = cva("loading loading-spinner", {
 
 type Props = PropsWith<CvaProps<typeof loading>, [ComponentProps<"div">]>;
 
-export default function Loading(props: ForbidChildren<Props>) {
+export function Loading(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, ["size", "class"]);
 
     return <div class={loading({ class: local.class, size: local.size })} {...others} />;

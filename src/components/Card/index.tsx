@@ -24,7 +24,7 @@ const card = cva("rounded-2xl bg-base-100 p-4", {
 
 type Props = PropsWith<CvaProps<typeof card>, [ComponentProps<"div">]>;
 
-export default function Card(props: RequireChildren<Props>) {
+export function Card(props: RequireChildren<Props>) {
     const [local, others] = splitProps(props, [
         "class",
         "children",

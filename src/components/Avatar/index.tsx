@@ -3,7 +3,7 @@ import { ComponentProps, splitProps } from "solid-js";
 import { ForbidChildren, PropsWith } from "~/types/utils";
 import { cva, CvaProps } from "~/utils/cva";
 
-import Image from "../Image";
+import { Image } from "../";
 
 const avatar = cva("flex-shrink-0 overflow-hidden rounded-full *:aspect-square", {
     variants: {
@@ -26,7 +26,7 @@ type Props = PropsWith<
     [CvaProps<typeof avatar>, ComponentProps<"div">]
 >;
 
-export default function Avatar(props: ForbidChildren<Props>) {
+export function Avatar(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, ["class", "src", "size"]);
 
     return (

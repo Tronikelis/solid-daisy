@@ -3,7 +3,7 @@ import { ComponentProps, JSX, splitProps } from "solid-js";
 import { MaybeChildren, PropsWith } from "~/types/utils";
 import { cva, CvaProps } from "~/utils/cva";
 
-import Loading from "../Loading";
+import { Loading } from "../";
 
 const button = cva("btn", {
     variants: {
@@ -44,7 +44,7 @@ type Props = PropsWith<
     [CvaProps<typeof button>, ComponentProps<"button">]
 >;
 
-export default function Button(props: MaybeChildren<Props>) {
+export function Button(props: MaybeChildren<Props>) {
     const [local, others] = splitProps(props, [
         "class",
         "size",

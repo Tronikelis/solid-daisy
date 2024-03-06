@@ -4,7 +4,7 @@ import { ComponentProps, splitProps } from "solid-js";
 import { ForbidChildren, PropsWith, WrapperProps } from "~/types/utils";
 import { cva, CvaProps } from "~/utils/cva";
 
-import Group from "../Group";
+import { Group } from "../";
 
 const checkbox = cva("checkbox", {
     variants: {
@@ -34,7 +34,7 @@ type Props = PropsWith<
     [CvaProps<typeof checkbox>, ComponentProps<typeof ControlledInput>]
 >;
 
-export default function Checkbox(props: ForbidChildren<Props>) {
+export function Checkbox(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, [
         "label",
         "color",

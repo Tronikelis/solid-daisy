@@ -7,7 +7,7 @@ const image = cva("object-fit h-full w-full");
 
 type Props = PropsWith<CvaProps<typeof image>, [ComponentProps<"img">]>;
 
-export default function Image(props: ForbidChildren<Props>) {
+export function Image(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, ["class"]);
 
     return (

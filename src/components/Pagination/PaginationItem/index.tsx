@@ -1,8 +1,8 @@
-import { ComponentProps, Setter, splitProps } from "solid-js";
+import { ComponentProps, splitProps } from "solid-js";
 
-import Button from "~/components/Button";
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cx } from "~/utils/cva";
+import { Button } from "~/components";
+import { MiniSetter, PropsWith, RequireChildren } from "~/types";
+import { cx } from "~/utils";
 
 type Props = PropsWith<
     {
