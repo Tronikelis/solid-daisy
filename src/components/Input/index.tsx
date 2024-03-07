@@ -103,7 +103,10 @@ export function Input(props: ForbidChildren<Props>) {
                     {local.leftSection}
 
                     <ControlledInput
-                        class="min-w-6 flex-1 border-none bg-transparent outline-none placeholder-shown:text-ellipsis"
+                        class={cx(
+                            "min-w-6 flex-1 border-none bg-transparent outline-none placeholder-shown:text-ellipsis",
+                            local.class
+                        )}
                         required={local.requiredHtml ?? local.required}
                         {...others}
                     />
