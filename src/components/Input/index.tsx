@@ -1,8 +1,8 @@
 import { ControlledInput } from "solid-controlled-input";
 import { ComponentProps, JSX, splitProps } from "solid-js";
 
-import { ForbidChildren, PropsWith, WrapperProps } from "~/types/utils";
-import { cva, CvaProps, cx } from "~/utils/cva";
+import { ForbidChildren, PropsWith, WrapperProps } from "~/types";
+import { cva, CvaProps, cx } from "~/utils";
 
 import { Group, Stack } from "../";
 
@@ -87,14 +87,14 @@ export function Input(props: ForbidChildren<Props>) {
                         disabled: others.disabled,
                         size: local.size,
                     }),
-                    "justify-center",
+                    "justify-center text-inherit",
                     local.rightSection && "pr-2",
                     local.leftSection && "pl-2"
                 )}
             >
                 <Group
                     class={cx(
-                        "flex-wrap gap-1",
+                        "cursor-[inherit] flex-wrap gap-1",
                         // upper input-disabled sets the pointer events
                         // so ignore lower down
                         others.disabled && "pointer-events-none"
@@ -104,7 +104,7 @@ export function Input(props: ForbidChildren<Props>) {
 
                     <ControlledInput
                         class={cx(
-                            "min-w-6 flex-1 border-none bg-transparent outline-none placeholder-shown:text-ellipsis",
+                            "pointer-events-auto min-w-6 flex-1 cursor-[inherit] border-none bg-transparent outline-none placeholder-shown:text-ellipsis",
                             local.class
                         )}
                         required={local.requiredHtml ?? local.required}

@@ -2,7 +2,7 @@ import { ControlledTextarea } from "solid-controlled-input";
 import { ComponentProps, splitProps } from "solid-js";
 
 import { ForbidChildren, PropsWith, WrapperProps } from "~/types";
-import { cva, CvaProps } from "~/utils";
+import { cva, CvaProps, cx } from "~/utils";
 
 import { Stack } from "../";
 
@@ -44,7 +44,10 @@ export function Textarea(props: ForbidChildren<Props>) {
             )}
 
             <ControlledTextarea
-                class={textarea({ class: local.class, bordered: local.bordered })}
+                class={cx(
+                    textarea({ class: local.class, bordered: local.bordered }),
+                    "text-inherit"
+                )}
                 {...others}
             />
 
