@@ -5,7 +5,7 @@
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "description": "solid + daisy = 💙",
+    "description": "A solidjs ui library wrapped around daisyui",
     "files": [
         "./dist"
     ],
