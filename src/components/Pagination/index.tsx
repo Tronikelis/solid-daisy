@@ -6,6 +6,9 @@ import { cva, CvaProps } from "~/utils/cva";
 
 import { Button, Group } from "../";
 
+import ChevronLeftIcon from "./ChevronLeftIcon";
+import ChevronRightIcon from "./ChevronRightIcon";
+import DotsIcon from "./DotsIcon";
 import IconButton from "./IconButton";
 import PaginationItem from "./PaginationItem";
 
@@ -114,7 +117,7 @@ export function Pagination(_props: ForbidChildren<Props>) {
                 // eslint-disable-next-line solid/reactivity
                 onClick={() => local.setValue(clamp(local.value - 1))}
             >
-                {local.leftArrowIcon || "<"}
+                {local.leftArrowIcon || <ChevronLeftIcon />}
             </IconButton>
 
             <Index each={each()}>
@@ -127,7 +130,7 @@ export function Pagination(_props: ForbidChildren<Props>) {
                                 size={local.size}
                                 class="pointer-events-none border-none bg-transparent outline-none"
                             >
-                                {local.dotsIcon || "..."}
+                                {local.dotsIcon || <DotsIcon />}
                             </Button>
                         }
                     >
@@ -148,7 +151,7 @@ export function Pagination(_props: ForbidChildren<Props>) {
                 // eslint-disable-next-line solid/reactivity
                 onClick={() => local.setValue(clamp(local.value + 1))}
             >
-                {local.rightArrowIcon || ">"}
+                {local.rightArrowIcon || <ChevronRightIcon />}
             </IconButton>
         </Group>
     );
