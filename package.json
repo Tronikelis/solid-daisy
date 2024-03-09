@@ -16,6 +16,14 @@
             "default": "./dist/index.js"
         }
     },
+    "keywords": [
+        "solid",
+        "solidjs",
+        "ui library",
+        "ui framework",
+        "daisyui",
+        "daisy"
+    ],
     "typesVersions": {},
     "scripts": {
         "build": "tsup",
