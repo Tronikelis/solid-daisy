@@ -1,6 +1,6 @@
 {
     "name": "solid-daisy",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "type": "module",
     "main": "./dist/index.js",
     "module": "./dist/index.js",
@@ -50,12 +50,12 @@
         "tailwindcss": "3.x.x",
         "@solid-primitives/event-listener": "2.x.x",
         "@solid-primitives/refs": "1.x.x",
+        "solid-controlled-input": "4.x.x",
         "daisyui": "4.x.x"
     },
     "dependencies": {
         "@floating-ui/dom": "^1.6.3",
         "class-variance-authority": "^0.7.0",
-        "solid-controlled-input": "^4.0.0",
         "tailwind-merge": "^2.2.1"
     }
 }

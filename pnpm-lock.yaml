@@ -21,7 +21,7 @@ dependencies:
     specifier: 4.x.x
     version: 4.7.2(postcss@8.4.35)
   solid-controlled-input:
-    specifier: ^4.0.0
+    specifier: 4.x.x
     version: 4.0.0(solid-js@1.8.15)
   solid-js:
     specifier: 1.x.x
