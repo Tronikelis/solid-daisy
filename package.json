@@ -47,12 +47,13 @@
         "typescript": "5.3.3"
     },
     "peerDependencies": {
-        "solid-js": "1.x.x"
+        "solid-js": "1.x.x",
+        "tailwindcss": "3.x.x",
+        "@solid-primitives/event-listener": "2.x.x",
+        "@solid-primitives/refs": "1.x.x"
     },
     "dependencies": {
         "@floating-ui/dom": "^1.6.3",
-        "@solid-primitives/event-listener": "^2.3.3",
-        "@solid-primitives/refs": "^1.0.8",
         "class-variance-authority": "^0.7.0",
         "solid-controlled-input": "^4.0.0",
         "tailwind-merge": "^2.2.1"

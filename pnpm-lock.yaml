@@ -9,10 +9,10 @@ dependencies:
     specifier: ^1.6.3
     version: 1.6.3
   '@solid-primitives/event-listener':
-    specifier: ^2.3.3
+    specifier: 2.x.x
     version: 2.3.3(solid-js@1.8.15)
   '@solid-primitives/refs':
-    specifier: ^1.0.8
+    specifier: 1.x.x
     version: 1.0.8(solid-js@1.8.15)
   class-variance-authority:
     specifier: ^0.7.0
