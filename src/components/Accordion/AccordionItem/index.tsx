@@ -3,7 +3,7 @@ import { mergeRefs } from "@solid-primitives/refs";
 import { ComponentProps, splitProps, useContext } from "solid-js";
 
 import { PropsWith, RequireChildren } from "~/types";
-import { cva, CvaProps } from "~/utils";
+import { cva } from "~/utils";
 
 import { AccordionContext } from "../context";
 
@@ -20,7 +20,7 @@ type Props = PropsWith<
         value?: string;
         title?: string;
     },
-    [CvaProps<typeof accordionItem>, ComponentProps<"div">]
+    [ComponentProps<"div">]
 >;
 
 export function AccordionItem(props: RequireChildren<Props>) {
