@@ -10,6 +10,24 @@
         -   [Breadcrumbs](#breadcrumbs)
         -   [Button](#button)
         -   [Card](#card)
+        -   [Checkbox](#checkbox)
+        -   [Divider](#divider)
+        -   [Dropdown](#dropdown)
+        -   [Group](#group)
+        -   [Image](#image)
+        -   [Input](#input)
+        -   [Link](#link)
+        -   [Loading](#loading)
+        -   [Modal](#modal)
+        -   [Pagination](#pagination)
+        -   [Radio](#radio)
+        -   [Stack](#stack)
+        -   [Table](#table)
+        -   [Tabs](#tabs)
+        -   [Text](#text)
+        -   [Textarea](#textarea)
+        -   [Toggle](#toggle)
+        -   [Tooltip](#tooltip)
 
 ## Components
 
@@ -184,4 +202,320 @@ import { Card } from "solid-daisy"
 >
     Contents
 </Card>
+```
+
+### Checkbox
+
+```tsx
+import { Checkbox } from "solid-daisy"
+
+<Checkbox
+    label={"label" || undefined}
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+    color={
+        "primary" ||
+        "secondary" ||
+        "accent" ||
+        "success" ||
+        "warning" ||
+        "info" ||
+        "error" ||
+        undefined
+    }
+    wrapperProps={{} || undefined}
+/>
+```
+
+### Divider
+
+```tsx
+import { Divider } from "solid-daisy"
+
+<Divider
+    vertical={false || undefined}
+/>
+```
+
+### Dropdown
+
+```tsx
+import { Dropdown } from "solid-daisy"
+
+<Dropdown
+    targetRef={node.value}
+    fullWidth={false || undefined}
+    placement={placement || undefined}
+    offset={6 || undefined}
+    hover={false || undefined}
+    opened={false || undefined}
+>
+    Contents
+</Dropdown>
+```
+
+### Group
+
+```tsx
+import { Group } from "solid-daisy"
+
+<Group>
+    Contents
+</Group>
+```
+
+### Image
+
+```tsx
+import { Image } from "solid-daisy"
+
+<Image />
+```
+
+### Input
+
+```tsx
+import { Input } from "solid-daisy"
+
+<Input
+    bordered={true || undefined}
+    disabled={false || undefined}
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+    color={
+        "primary" ||
+        "secondary" ||
+        "accent" ||
+        "success" ||
+        "warning" ||
+        "info" ||
+        "error" ||
+        undefined
+    }
+    label={"label" || undefined}
+    description={"description" || undefined}
+    requiredHtml={false || undefined}
+    required={false || undefined}
+    leftSection={<Icon /> || undefined}
+    rightSection={<Icon /> || undefined}
+    wrapperProps={{} || undefined}
+    containerProps={{} || undefined}
+/>
+```
+
+### Link
+
+```tsx
+import { Link } from "solid-daisy"
+
+<Link
+    italic={false || undefined}
+    bold={false || undefined}
+    hover={false || undefined}
+    color={
+        "primary" ||
+        "secondary" ||
+        "accent" ||
+        "success" ||
+        "warning" ||
+        "info" ||
+        "error" ||
+        undefined
+    }
+>
+    Contents
+</Link>
+```
+
+### Loading
+
+```tsx
+import { Loading } from "solid-daisy"
+
+<Loading
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+/>
+```
+
+### Modal
+
+```tsx
+import { Modal } from "solid-daisy"
+
+<Modal
+    open={open()}
+    setOpen={setOpen}
+
+>
+    Contents
+</Modal>
+```
+
+### Pagination
+
+```tsx
+import { Pagination } from "solid-daisy"
+
+<Pagination
+    total={2 || undefined}
+    boundaries={1 || undefined}
+    siblings={1 || undefined}
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+    value={page()}
+    setValue={setPage}
+    leftArrowIcon={<Icon /> || undefined}
+    rightArrowIcon={<Icon /> || undefined}
+    dotsIcon={<Icon /> || undefined}
+/>
+```
+
+### Radio
+
+```tsx
+import { Radio, RadioItem } from "solid-daisy"
+
+<Radio
+    color={
+        "primary" ||
+        "secondary" ||
+        "accent" ||
+        "success" ||
+        "warning" ||
+        "info" ||
+        "error" ||
+        undefined
+    }
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+    selected={value() || undefined}
+    setSelected={setSelected}
+>
+    <RadioItem
+        size={"xs" || "sm" || "md" || "lg" || undefined}
+        color={
+            "primary" ||
+            "secondary" ||
+            "accent" ||
+            "success" ||
+            "warning" ||
+            "info" ||
+            "error" ||
+            undefined
+        }
+        value={"value" || undefined}
+        label={"label" || undefined}
+        wrapperProps={{} || undefined}
+    />
+</Radio>
+```
+
+### Stack
+
+```tsx
+import { Stack } from "solid-daisy"
+
+<Stack>
+    Contents
+</Stack>
+```
+
+### Table
+
+```tsx
+import { Table } from "solid-daisy"
+
+<Table
+    striped={false || undefined}
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+    stickyHead={false || undefined}
+>
+    <thead></thead>
+    <tbody></tbody>
+</Table>
+```
+
+### Tabs
+
+```tsx
+import { Tabs, Tab } from "solid-daisy"
+
+<Tabs
+    variant={"boxed" || "lifted" || "bordered" || undefined}
+    size={"xs" || "sm" || "md" || "lg" || undefined}
+    selected={selected()}
+    setSelected={setSelected}
+>
+    <Tab value="x">Contents</Tab>
+</Tabs>
+```
+
+### Text
+
+```tsx
+import { Text } from "solid-daisy"
+
+<Text
+    dimmed={false || undefined}
+    italic={false || undefined}
+    bold={false || undefined}
+    size={
+        "xs" ||
+        "sm" ||
+        "md" ||
+        "lg" ||
+        "xl" ||
+        "xl2" ||
+        "xl4" ||
+        undefined
+    }
+    centered={false || undefined}
+    underlined={false || undefined}
+    breakWords={false || undefined}
+>
+    Contents
+</Text>
+```
+
+### Textarea
+
+```tsx
+import { Textarea } from "solid-daisy"
+
+<Textarea
+    label={"label" || undefined}
+    description={"description" || undefined}
+    wrapperProps={{} || undefined}
+/>
+```
+
+### Toggle
+
+```tsx
+import { Toggle } from "solid-daisy"
+
+<Toggle
+    label={"label" || undefined}
+    wrapperProps={{} || undefined}
+/>
+```
+
+### Tooltip
+
+```tsx
+import { Tooltip } from "solid-daisy"
+
+<Tooltip
+    label={"content"}
+    opened={opened() || undefined}
+    position={"top" || "bottom" || "left" || "right" || undefined}
+    color={
+        "primary" ||
+        "secondary" ||
+        "accent" ||
+        "success" ||
+        "warning" ||
+        "info" ||
+        "error" ||
+        undefined
+    }
+>
+    Hover me
+</Tooltip>
 ```

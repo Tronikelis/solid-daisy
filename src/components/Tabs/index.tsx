@@ -1,6 +1,6 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { MiniSetter, PropsWith, RequireChildren, SelectableSize } from "~/types";
+import { MiniSetter, PropsWith, RequireChildren } from "~/types";
 import { cva, CvaProps } from "~/utils";
 
 import { TabsContext } from "./context";
@@ -23,7 +23,6 @@ const tabs = cva("tabs", {
 
 type Props<T extends string> = PropsWith<
     {
-        size?: SelectableSize;
         selected: T;
         setSelected: MiniSetter<T>;
     },
