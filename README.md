@@ -1,6 +1,12 @@
-# solid-daisy
+<h1 align="center">solid-swr</h1>
 
--   [solid-daisy](#solid-daisy)
+<h3 align="center">class-variance-authority + tailwindcss + solid-js + daisyui => 💪</h3>
+
+-   [Install](#install)
+-   [Creating your own components](#creating-your-own-components)
+-   [A note about useRef](#a-note-about-useref)
+-   [Misc utils](#misc-utils)
+-   [Components](#components)
     -   [Accordion](#accordion)
     -   [Alert](#alert)
     -   [Autocomplete](#autocomplete)
@@ -27,6 +33,101 @@
     -   [Textarea](#textarea)
     -   [Toggle](#toggle)
     -   [Tooltip](#tooltip)
+
+## Install
+
+```
+pnpm add solid-daisy solid-js tailwindcss @solid-primitives/event-listener @solid-primitives/refs solid-controlled-input daisyui
+```
+
+## Creating your own components
+
+Exported utils
+
+-   `cva` -> `class-variance-authority` wrapped with `tailwind-merge`
+-   `CvaProps` -> `VariantProps` from `class-variance-authority`
+-   `cx` -> `clsx` wrapped with `tailwind-merge`
+-   `PropsWith` -> type that helps merge other types
+
+Optional util types
+
+-   `RequireChildren`
+-   `ForbidChildren`
+-   `MaybeChildren`
+
+Example (CardWithAvatar)
+
+```tsx
+import { cva, PropsWith, cx, Card, Avatar, ForbidChildren } from "solid-daisy"
+import { ComponentProps, splitProps } from "solid-js"
+
+const cardWithAvatar = cva("base classes", {
+    variants: {
+        // read class-variance-authority docs
+    }
+})
+
+type Props = PropsWith<{
+    hello: string
+}, [ComponentProps<typeof Card>]>
+
+export function CardWithAvatar(props: ForbidChildren<Props>) {
+    const [local, others] = splitProps(props, ["hello", "class"])
+
+    return (
+        <Card
+            class={cardWithAvatar({
+                class: local.class,
+            })}
+            {...others}
+        >
+            <Avatar src={local.hello} />
+        </Card>
+    )
+}
+```
+
+## A note about useRef
+
+You can notice this lib exports `useRef` why not just `let node`
+
+Well, `useRef` supports _all_ ref assignments, even in `wrapperProps`
+
+Example
+
+```tsx
+
+let wrapperRef: HTMLDivElement | undefined;
+
+<Input
+    // this works, as solid compiles the assign
+    ref={wrapperRef}
+    // it is impossible for Input to set wrapperRef
+    wrapperProps={{ ref: wrapperRef }}
+/>
+
+const [wrapperRef, setWrapperRef] = useRef<HTMLDivElement>()
+
+// both options work, because setWrapperRef is a setter,
+// which solid will call
+
+<Input
+    ref={setWrapperRef}
+    wrapperProps={{ ref: setWrapperRef }}
+/>
+```
+
+That's why I recommend to always use `useRef` for consistency
+
+## Misc utils
+
+This lib exports everything it uses,
+
+A few notable utils
+
+-   `useClickOutside`
+
+## Components
 
 ### Accordion
 
