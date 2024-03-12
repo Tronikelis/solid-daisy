@@ -593,6 +593,11 @@ const [wrapperRef, setWrapperRef] = useRef<HTMLDivElement>()
     ref={setWrapperRef}
     wrapperProps={{ ref: setWrapperRef }}
 />
+
+// use like
+onMount(() => {
+    console.log(wrapperRef.value)
+})
 ```
 
 That's why I recommend to always use `useRef` for consistency
