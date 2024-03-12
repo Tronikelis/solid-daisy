@@ -1,4 +1,4 @@
-<h1 align="center">solid-swr</h1>
+<h1 align="center">solid-daisy</h1>
 
 <h3 align="center">class-variance-authority + tailwindcss + solid-js + daisyui => 💪</h3>
 
