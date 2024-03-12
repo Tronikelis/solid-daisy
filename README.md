@@ -1,62 +1,32 @@
 # solid-daisy
 
 -   [solid-daisy](#solid-daisy)
-    -   [Components](#components)
-        -   [Accordion](#accordion)
-        -   [Alert](#alert)
-        -   [Autocomplete](#autocomplete)
-        -   [Avatar](#avatar)
-        -   [Badge](#badge)
-        -   [Breadcrumbs](#breadcrumbs)
-        -   [Button](#button)
-        -   [Card](#card)
-        -   [Checkbox](#checkbox)
-        -   [Divider](#divider)
-        -   [Dropdown](#dropdown)
-        -   [Group](#group)
-        -   [Image](#image)
-        -   [Input](#input)
-        -   [Link](#link)
-        -   [Loading](#loading)
-        -   [Modal](#modal)
-        -   [Pagination](#pagination)
-        -   [Radio](#radio)
-        -   [Stack](#stack)
-        -   [Table](#table)
-        -   [Tabs](#tabs)
-        -   [Text](#text)
-        -   [Textarea](#textarea)
-        -   [Toggle](#toggle)
-        -   [Tooltip](#tooltip)
-
-## Components
-
--   Accordion
--   Alert
--   Autocomplete
--   Avatar
--   Badge
--   Breadcrumbs
--   Button
--   Card
--   Checkbox
--   Divider
--   Dropdown
--   Group
--   Image
--   Input
--   Link
--   Loading
--   Modal
--   Pagination
--   Radio
--   Stack
--   Table
--   Tabs
--   Text
--   Textarea
--   Toggle
--   Tooltip
+    -   [Accordion](#accordion)
+    -   [Alert](#alert)
+    -   [Autocomplete](#autocomplete)
+    -   [Avatar](#avatar)
+    -   [Badge](#badge)
+    -   [Breadcrumbs](#breadcrumbs)
+    -   [Button](#button)
+    -   [Card](#card)
+    -   [Checkbox](#checkbox)
+    -   [Divider](#divider)
+    -   [Dropdown](#dropdown)
+    -   [Group](#group)
+    -   [Image](#image)
+    -   [Input](#input)
+    -   [Link](#link)
+    -   [Loading](#loading)
+    -   [Modal](#modal)
+    -   [Pagination](#pagination)
+    -   [Radio](#radio)
+    -   [Stack](#stack)
+    -   [Table](#table)
+    -   [Tabs](#tabs)
+    -   [Text](#text)
+    -   [Textarea](#textarea)
+    -   [Toggle](#toggle)
+    -   [Tooltip](#tooltip)
 
 ### Accordion
 
