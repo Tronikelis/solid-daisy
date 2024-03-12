@@ -570,6 +570,10 @@ let wrapperRef: HTMLDivElement | undefined;
     wrapperProps={{ ref: wrapperRef }}
 />
 
+/**
+ That's why we do it like this
+*/
+
 const [wrapperRef, setWrapperRef] = useRef<HTMLDivElement>()
 
 // both options work, because setWrapperRef is a setter,
