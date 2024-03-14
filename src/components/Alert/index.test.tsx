@@ -1,24 +1,25 @@
-import { render, screen } from "@solidjs/testing-library";
+import { render } from "@solidjs/testing-library";
 import { ComponentProps } from "solid-js";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 
 import { Alert } from ".";
 
 describe("<Alert />", () => {
-    const getProps = (
-        props?: Partial<ComponentProps<typeof Alert>>
-    ): ComponentProps<typeof Alert> => ({
-        children: "Foo",
-        ...props,
+    let props: ComponentProps<typeof Alert>;
+
+    beforeEach(() => {
+        props = {
+            children: "foo",
+        };
     });
 
     it("renders correctly", () => {
-        const { container } = render(() => <Alert {...getProps()} />);
+        const { container } = render(() => <Alert {...props} />);
         expect(container).toMatchSnapshot();
     });
 
     it("renders icon", () => {
-        render(() => <Alert {...getProps()} icon={<div>icon</div>} />);
+        const screen = render(() => <Alert {...props} icon={<div>icon</div>} />);
 
         expect(screen.getByText("icon")).toBeInTheDocument();
     });

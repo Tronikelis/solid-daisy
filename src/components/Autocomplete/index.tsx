@@ -237,6 +237,7 @@ export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>
                 opened={opened()}
                 ref={setDropdownRef}
                 fullWidth
+                data-testId="dropdown"
             >
                 <ul class="menu max-h-48 flex-nowrap gap-1 overflow-auto">
                     <For each={filteredItems()}>{renderItem}</For>

@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from "@solidjs/testing-library";
+import { render } from "@solidjs/testing-library";
+import userEvent from "@testing-library/user-event";
 import { ComponentProps, createSignal } from "solid-js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -29,10 +30,10 @@ describe("<Accordion />", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("selecting accordion item works", () => {
+    it("selecting accordion item works", async () => {
         const [selected, setSelected] = createSignal("a");
 
-        render(() => (
+        const screen = render(() => (
             <Accordion {...props} selected={selected()} setSelected={setSelected}>
                 <AccordionItem value="a" title="A">
                     a
@@ -43,7 +44,7 @@ describe("<Accordion />", () => {
             </Accordion>
         ));
 
-        fireEvent.click(screen.getByText("B"));
+        await userEvent.click(screen.getByText("B"));
 
         // eslint-disable-next-line solid/reactivity
         expect(selected()).toBe("b");

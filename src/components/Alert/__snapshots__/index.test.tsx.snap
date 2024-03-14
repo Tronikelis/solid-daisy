@@ -6,7 +6,7 @@ exports[`<Alert /> > renders correctly 1`] = `
     class="alert"
   >
     
-    Foo
+    foo
     <div>
       <button
         class="btn btn-sm btn-circle btn-ghost"
