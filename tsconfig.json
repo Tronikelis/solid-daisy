@@ -18,6 +18,8 @@
 
         "jsxImportSource": "solid-js",
 
+        "types": ["@testing-library/jest-dom/vitest"],
+
         "paths": {
             "~/*": ["./*"]
         }

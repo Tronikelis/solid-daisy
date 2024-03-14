@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Alert /> > renders correctly 1`] = `
+<div>
+  <div
+    class="alert"
+  >
+    
+    Foo
+    <div>
+      <button
+        class="btn btn-sm btn-circle btn-ghost"
+        type="button"
+      >
+        
+        
+        ✕
+        
+      </button>
+    </div>
+  </div>
+</div>
+`;
