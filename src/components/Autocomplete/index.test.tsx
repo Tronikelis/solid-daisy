@@ -77,5 +77,49 @@ describe("<Autocomplete />", () => {
             expect(screen.getAllByText("foobar")).toHaveLength(1);
             expect(screen.queryByText("another")).not.toBeInTheDocument();
         });
+
+        describe("multiple", () => {
+            beforeEach(() => {
+                props.multiple = true;
+            });
+
+            it("x icon appears to delete item", async () => {
+                const [value, setValue] = createSignal([{ value: "foobar" }]);
+
+                const screen = render(() => (
+                    <Autocomplete {...props} value={value()} setValue={setValue} />
+                ));
+
+                expect(value()).toHaveLength(1);
+                expect(screen.getAllByText("foobar")).toHaveLength(2);
+
+                await userEvent.click(screen.getByText("X"));
+
+                expect(value()).toHaveLength(0);
+
+                expect(screen.getAllByText("foobar")).toHaveLength(1);
+            });
+
+            it("custom onDelete works", async () => {
+                const [value, setValue] = createSignal([{ value: "foobar" }]);
+
+                const screen = render(() => (
+                    <Autocomplete
+                        {...props}
+                        value={value()}
+                        setValue={setValue}
+                        selectedComponent={(_, onDelete) => (
+                            <div onClick={onDelete} data-testid="item">
+                                X
+                            </div>
+                        )}
+                    />
+                ));
+
+                await userEvent.click(screen.getByTestId("item"));
+
+                expect(value()).toHaveLength(0);
+            });
+        });
     });
 });
