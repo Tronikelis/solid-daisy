@@ -1,0 +1,46 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Accordion /> > renders correctly 1`] = `
+<div>
+  <div
+    class="flex flex-col gap-2"
+  >
+    <div
+      class="collapse collapse-arrow bg-base-200"
+    >
+      <input
+        name="cl-0"
+        type="radio"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Foo
+      </div>
+      <div
+        class="collapse-content"
+      >
+        Bar
+      </div>
+    </div>
+    <div
+      class="collapse collapse-arrow bg-base-200"
+    >
+      <input
+        name="cl-0"
+        type="radio"
+      />
+      <div
+        class="collapse-title text-xl font-medium"
+      >
+        Foo
+      </div>
+      <div
+        class="collapse-content"
+      >
+        Bar
+      </div>
+    </div>
+  </div>
+</div>
+`;
