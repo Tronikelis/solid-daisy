@@ -8,6 +8,7 @@ export default mergeConfig(
         root: process.cwd(),
         test: {
             environment: "jsdom",
+            setupFiles: "./vitest-setup.ts",
         },
     })
 );

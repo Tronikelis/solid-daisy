@@ -1,3 +1,4 @@
+/* eslint-disable solid/reactivity */
 import { render } from "@solidjs/testing-library";
 import userEvent from "@testing-library/user-event";
 import { ComponentProps, createSignal } from "solid-js";
@@ -46,7 +47,6 @@ describe("<Accordion />", () => {
 
         await userEvent.click(screen.getByText("B"));
 
-        // eslint-disable-next-line solid/reactivity
         expect(selected()).toBe("b");
     });
 });
