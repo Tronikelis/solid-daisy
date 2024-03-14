@@ -121,5 +121,35 @@ describe("<Autocomplete />", () => {
                 expect(value()).toHaveLength(0);
             });
         });
+
+        it("can navigate with arrow keys", async () => {
+            const [value, setValue] = createSignal<{ value: string }[]>([]);
+
+            const screen = render(() => (
+                <Autocomplete
+                    {...props}
+                    value={value()}
+                    setValue={setValue}
+                    data-testid="input"
+                />
+            ));
+
+            await userEvent.keyboard("[ArrowDown]");
+
+            expect(screen.getByText("foobar").parentElement).not.toHaveClass("ring");
+
+            await userEvent.click(screen.getByTestId("input"));
+            await userEvent.keyboard("[ArrowDown]");
+
+            expect(screen.getByText("foobar").parentElement).toHaveClass("ring");
+
+            await userEvent.keyboard("[Enter]");
+
+            expect(value()).toStrictEqual([{ value: "foobar" }]);
+
+            await userEvent.keyboard("[Escape]");
+
+            expect(screen.getByTestId("dropdown")).toHaveClass("invisible");
+        });
     });
 });
