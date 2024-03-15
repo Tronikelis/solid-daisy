@@ -30,3 +30,6 @@ jobs:
 
             - name: tsc
               run: pnpm tsc
+
+            - name: vitest
+              run: pnpm test
