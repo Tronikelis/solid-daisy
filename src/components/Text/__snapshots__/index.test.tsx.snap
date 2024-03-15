@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Text /> > renders correctly 1`] = `
+<div>
+  <p
+    class="text-base"
+  >
+    foo
+  </p>
+</div>
+`;
