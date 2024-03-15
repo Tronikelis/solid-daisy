@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Image /> > renders correctly 1`] = `
+<div>
+  <img
+    class="object-fit h-full w-full"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  />
+</div>
+`;
