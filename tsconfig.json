@@ -9,6 +9,7 @@
         "allowSyntheticDefaultImports": true,
         "strict": true,
         "noEmit": true,
+        "noUncheckedIndexedAccess": true,
 
         "jsx": "preserve",
 
@@ -17,6 +18,8 @@
         "baseUrl": "./src",
 
         "jsxImportSource": "solid-js",
+
+        "types": ["@testing-library/jest-dom/vitest"],
 
         "paths": {
             "~/*": ["./*"]

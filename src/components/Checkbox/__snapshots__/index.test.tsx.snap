@@ -1,0 +1,19 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Checkbox /> > renders correctly 1`] = `
+<div>
+  <div
+    class="flex flex-row items-center gap-4"
+  >
+    <label
+      class="label cursor-pointer gap-3"
+    >
+      <input
+        class="checkbox"
+        type="checkbox"
+      />
+      
+    </label>
+  </div>
+</div>
+`;

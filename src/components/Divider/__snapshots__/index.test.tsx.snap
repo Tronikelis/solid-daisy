@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Divider /> > renders correctly 1`] = `
+<div>
+  <div
+    class="divider m-0"
+  />
+</div>
+`;

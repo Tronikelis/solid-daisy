@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Toggle /> > renders correctly 1`] = `
+<div>
+  <div
+    class="flex flex-row items-center gap-4"
+  >
+    <input
+      class="toggle"
+      type="checkbox"
+    />
+  </div>
+</div>
+`;
