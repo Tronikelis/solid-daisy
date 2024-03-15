@@ -80,6 +80,17 @@ describe("<Autocomplete />", () => {
             expect(screen.queryByText("another")).not.toBeInTheDocument();
         });
 
+        it("custom filtering works", async () => {
+            const screen = render(() => (
+                <Autocomplete {...props} data-testid="input" filter={() => true} />
+            ));
+
+            await userEvent.type(screen.getByTestId("input"), "1234567890");
+
+            expect(screen.getByText("foobar")).toBeInTheDocument();
+            expect(screen.getByText("let's go")).toBeInTheDocument();
+        });
+
         describe("multiple", () => {
             beforeEach(() => {
                 props.multiple = true;
