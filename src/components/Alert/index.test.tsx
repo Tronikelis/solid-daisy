@@ -1,4 +1,5 @@
 import { render } from "@solidjs/testing-library";
+import userEvent from "@testing-library/user-event";
 import { ComponentProps } from "solid-js";
 import { beforeEach, describe, expect, it } from "vitest";
 
@@ -22,5 +23,15 @@ describe("<Alert />", () => {
         const screen = render(() => <Alert {...props} icon={<div>icon</div>} />);
 
         expect(screen.getByText("icon")).toBeInTheDocument();
+    });
+
+    it("closes itself after pressing x", async () => {
+        const screen = render(() => <Alert {...props} />);
+
+        expect(screen.getByText("foo")).toBeInTheDocument();
+
+        await userEvent.click(screen.getByText("✕"));
+
+        expect(screen.queryByText("foo")).not.toBeInTheDocument();
     });
 });
