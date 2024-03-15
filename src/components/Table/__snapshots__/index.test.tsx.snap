@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Table /> > renders correctly 1`] = `
+<div>
+  <div
+    class="rounded-2xl bg-base-100 border border-gray-200 p-0 overflow-hidden"
+  >
+    <div
+      class="overflow-x-auto"
+    >
+      <table
+        class="table"
+      >
+        <div>
+          foo
+        </div>
+      </table>
+    </div>
+  </div>
+</div>
+`;
