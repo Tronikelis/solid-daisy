@@ -69,10 +69,12 @@ describe("<Autocomplete />", () => {
             expect(screen.getAllByText("foobar")).toHaveLength(1);
         });
 
-        it("default filtering works", () => {
+        it("default filtering works", async () => {
             props.items = [{ value: "foobar" }, { value: "another" }];
 
-            const screen = render(() => <Autocomplete {...props} inputValue="foobar" />);
+            const screen = render(() => <Autocomplete {...props} data-testid="input" />);
+
+            await userEvent.type(screen.getByTestId("input"), "foobar");
 
             expect(screen.getAllByText("foobar")).toHaveLength(1);
             expect(screen.queryByText("another")).not.toBeInTheDocument();
