@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Tooltip /> > renders correctly 1`] = `
+<div>
+  <div
+    class="tooltip"
+    data-tip="foo"
+  >
+    bar
+  </div>
+</div>
+`;
