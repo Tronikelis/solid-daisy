@@ -1,4 +1,5 @@
 import { render } from "@solidjs/testing-library";
+import userEvent from "@testing-library/user-event";
 import { createSignal } from "solid-js";
 import { describe, expect, it, vi } from "vitest";
 
@@ -15,10 +16,10 @@ describe("<Modal />", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("opening / closing works", () => {
+    it("opening / closing works", async () => {
         const [open, setOpen] = createSignal(false);
 
-        render(() => (
+        const screen = render(() => (
             <Modal open={open()} setOpen={setOpen}>
                 foo
             </Modal>
@@ -29,5 +30,9 @@ describe("<Modal />", () => {
         setOpen(true);
 
         expect(document.querySelector("input")).toBeChecked();
+
+        await userEvent.click(screen.getByText("✕"));
+
+        expect(document.querySelector("input")).not.toBeChecked();
     });
 });

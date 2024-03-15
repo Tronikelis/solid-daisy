@@ -3,9 +3,13 @@ import { ComponentProps, createEffect, createUniqueId, splitProps } from "solid-
 
 import { useClickOutside, useRef } from "~/hooks";
 import { MiniSetter, PropsWith, RequireChildren } from "~/types";
+import { cx } from "~/utils";
+
+import { Button, Group, Stack, Text } from "../";
 
 type Props = PropsWith<
     {
+        title?: string;
         open: boolean;
         setOpen: MiniSetter<boolean>;
     },
@@ -13,7 +17,14 @@ type Props = PropsWith<
 >;
 
 export function Modal(props: RequireChildren<Props>) {
-    const [local, others] = splitProps(props, ["open", "setOpen", "children", "ref"]);
+    const [local, others] = splitProps(props, [
+        "open",
+        "setOpen",
+        "children",
+        "ref",
+        "title",
+        "class",
+    ]);
 
     const [dialogRef, setDialogRef] = useRef<HTMLDivElement>();
     const [inputRef, setInputRef] = useRef<HTMLInputElement>();
@@ -45,8 +56,30 @@ export function Modal(props: RequireChildren<Props>) {
             <input ref={setInputRef} type="checkbox" id={modalId} class="modal-toggle" />
 
             <div ref={setDialogRef} class="modal">
-                <div class="modal-box" ref={mergeRefs(local.ref, setModalBoxRef)} {...others}>
-                    {local.children}
+                <div
+                    class={cx("modal-box", local.class)}
+                    ref={mergeRefs(local.ref, setModalBoxRef)}
+                    {...others}
+                >
+                    <Stack>
+                        <Group class={local.title ? "justify-between" : "justify-end"}>
+                            {local.title && (
+                                <Text bold size="lg">
+                                    {local.title}
+                                </Text>
+                            )}
+                            <Button
+                                size="sm"
+                                color="ghost"
+                                circle
+                                onClick={() => local.setOpen(false)}
+                            >
+                                {"✕"}
+                            </Button>
+                        </Group>
+
+                        {local.children}
+                    </Stack>
                 </div>
             </div>
         </>
