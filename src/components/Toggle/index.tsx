@@ -19,23 +19,19 @@ type Props = PropsWith<
 export function Toggle(props: ForbidChildren<Props>) {
     const [local, others] = splitProps(props, ["class", "label", "wrapperProps"]);
 
+    const renderInput = () => (
+        <ControlledInput type="checkbox" class={toggle({ class: local.class })} {...others} />
+    );
+
     return (
         <Group {...local.wrapperProps}>
             {local.label ? (
                 <label class="label cursor-pointer gap-3">
-                    <ControlledInput
-                        type="checkbox"
-                        class={toggle({ class: local.class })}
-                        {...others}
-                    />
+                    {renderInput()}
                     <span class="label-text">{local.label}</span>
                 </label>
             ) : (
-                <ControlledInput
-                    type="checkbox"
-                    class={toggle({ class: local.class })}
-                    {...others}
-                />
+                renderInput()
             )}
         </Group>
     );
