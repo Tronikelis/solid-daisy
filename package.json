@@ -1,11 +1,11 @@
 {
     "name": "solid-daisy",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "type": "module",
     "main": "./dist/index.js",
     "module": "./dist/index.js",
     "types": "./dist/index.d.ts",
-    "description": "A solidjs ui library wrapped around daisyui",
+    "description": "Daisy UI component library for solid 💙",
     "files": [
         "./dist"
     ],
