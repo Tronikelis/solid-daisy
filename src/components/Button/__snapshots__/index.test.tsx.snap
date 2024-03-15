@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Button /> > renders correctly 1`] = `
+<div>
+  <button
+    class="btn"
+    type="button"
+  >
+    
+    
+    Hi
+    
+  </button>
+</div>
+`;
