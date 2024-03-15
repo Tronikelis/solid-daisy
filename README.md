@@ -2,6 +2,12 @@
 
 <h3 align="center">class-variance-authority + tailwindcss + solid-js + daisyui => 💪</h3>
 
+<div align="center">
+    <img src="https://img.shields.io/github/stars/Tronikelis/solid-daisy?style=flat-square" />
+    <img src="https://img.shields.io/bundlephobia/minzip/solid-daisy?style=flat-square" />
+    <img src="https://img.shields.io/npm/v/solid-daisy?style=flat-square" />
+</div>
+
 -   [Install](#install)
 -   [Components](#components)
     -   [Accordion](#accordion)
