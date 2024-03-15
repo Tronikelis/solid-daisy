@@ -1,7 +1,7 @@
 import { ComponentProps, JSX, splitProps } from "solid-js";
 
-import { MaybeChildren, PropsWith } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { MaybeChildren, PropsWith } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 import { Loading } from "../";
 

@@ -1,7 +1,7 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { PropsWith, RequireChildren } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 const group = cva("flex flex-row items-center gap-4");
 

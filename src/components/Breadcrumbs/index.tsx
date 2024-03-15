@@ -1,7 +1,7 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { PropsWith, RequireChildren } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { PropsWith, RequireChildren } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 const breadcrumbs = cva("breadcrumbs text-sm");
 

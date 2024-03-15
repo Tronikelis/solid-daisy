@@ -1,8 +1,7 @@
 import { ComponentProps, Index, JSX, mergeProps, Show, splitProps } from "solid-js";
 
-import { SelectableSize } from "~/types/props";
-import { ForbidChildren, MiniSetter, PropsWith } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { ForbidChildren, MiniSetter, PropsWith, SelectableSize } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 import { Button, Group } from "../";
 

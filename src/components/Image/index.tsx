@@ -1,7 +1,7 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { ForbidChildren, PropsWith } from "~/types/utils";
-import { cva, CvaProps } from "~/utils/cva";
+import { ForbidChildren, PropsWith } from "~/types";
+import { cva, CvaProps } from "~/utils";
 
 const image = cva("object-fit h-full w-full");
 

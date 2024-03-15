@@ -1,6 +1,6 @@
 import { ComponentProps, splitProps } from "solid-js";
 
-import { RequireChildren } from "~/types/utils";
+import { RequireChildren } from "~/types";
 
 type Props = ComponentProps<"li">;
 

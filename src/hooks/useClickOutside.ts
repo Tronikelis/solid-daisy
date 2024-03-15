@@ -1,6 +1,6 @@
 import { createEventListener } from "@solid-primitives/event-listener";
 
-import { MaybeAccessor } from "~/types/utils";
+import { MaybeAccessor } from "~/types";
 
 type CanMany<T> = T | T[];
 
