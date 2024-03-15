@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<Avatar /> > renders correctly 1`] = `
+<div>
+  <div
+    class="flex-shrink-0 overflow-hidden rounded-full *:aspect-square size-16"
+  >
+    <img
+      class="object-fit h-full w-full"
+      loading="lazy"
+      referrerpolicy="no-referrer"
+      src="https://example.com"
+    />
+  </div>
+</div>
+`;
