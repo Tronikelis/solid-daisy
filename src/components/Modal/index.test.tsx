@@ -7,19 +7,19 @@ import { Modal } from ".";
 
 describe("<Modal />", () => {
     it("renders correctly", () => {
-        const { container } = render(() => (
+        const { baseElement } = render(() => (
             <Modal open setOpen={vi.fn()}>
                 oh
             </Modal>
         ));
 
-        expect(container).toMatchSnapshot();
+        expect(baseElement).toMatchSnapshot();
     });
 
     it("opening / closing works", async () => {
         const [open, setOpen] = createSignal(false);
 
-        const screen = render(() => (
+        render(() => (
             <Modal open={open()} setOpen={setOpen}>
                 foo
             </Modal>
@@ -31,7 +31,7 @@ describe("<Modal />", () => {
 
         expect(document.querySelector("input")).toBeChecked();
 
-        await userEvent.click(screen.getByText("✕"));
+        await userEvent.click(document.querySelector('[data-testid="modal-x"]')!);
 
         expect(document.querySelector("input")).not.toBeChecked();
     });

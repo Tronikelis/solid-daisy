@@ -1,37 +1,43 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`<Modal /> > renders correctly 1`] = `
-<div>
-  <input
-    class="modal-toggle"
-    id="cl-0"
-    type="checkbox"
-  />
-  <div
-    class="modal"
-  >
+<body>
+  <div>
+    
+  </div>
+  <div>
+    <input
+      class="modal-toggle"
+      id="cl-0"
+      type="checkbox"
+    />
     <div
-      class="modal-box"
+      class="modal"
     >
       <div
-        class="flex flex-col gap-4"
+        class="modal-box"
       >
         <div
-          class="flex flex-row items-center gap-4 justify-end"
+          class="flex flex-col gap-4"
         >
-          <button
-            class="btn btn-sm btn-circle btn-ghost"
-            type="button"
+          <div
+            class="flex flex-row items-center gap-4 justify-end"
           >
-            
-            
-            ✕
-            
-          </button>
+            <button
+              class="btn btn-sm btn-circle btn-ghost"
+              data-testid="modal-x"
+              type="button"
+            >
+              
+              
+              ✕
+              
+            </button>
+          </div>
+          oh
         </div>
-        oh
       </div>
     </div>
   </div>
-</div>
+</body>
 `;

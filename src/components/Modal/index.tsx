@@ -1,5 +1,6 @@
 import { mergeRefs } from "@solid-primitives/refs";
 import { ComponentProps, createEffect, createUniqueId, splitProps } from "solid-js";
+import { Portal } from "solid-js/web";
 
 import { useClickOutside, useRef } from "~/hooks";
 import { MiniSetter, PropsWith, RequireChildren } from "~/types";
@@ -52,7 +53,7 @@ export function Modal(props: RequireChildren<Props>) {
     });
 
     return (
-        <>
+        <Portal>
             <input ref={setInputRef} type="checkbox" id={modalId} class="modal-toggle" />
 
             <div ref={setDialogRef} class="modal">
@@ -73,6 +74,7 @@ export function Modal(props: RequireChildren<Props>) {
                                 color="ghost"
                                 circle
                                 onClick={() => local.setOpen(false)}
+                                data-testid="modal-x"
                             >
                                 {"✕"}
                             </Button>
@@ -82,6 +84,6 @@ export function Modal(props: RequireChildren<Props>) {
                     </Stack>
                 </div>
             </div>
-        </>
+        </Portal>
     );
 }
