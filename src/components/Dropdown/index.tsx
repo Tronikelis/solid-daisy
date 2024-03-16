@@ -96,6 +96,11 @@ export function Dropdown(props: RequireChildren<Props>) {
             );
         }
 
+        const roundByDPR = (value: number) => {
+            const dpr = window.devicePixelRatio ?? 1;
+            return Math.round(value * dpr) / dpr;
+        };
+
         const compute = async () => {
             const { x, y } = await computePosition(targetRef, dropdownRef.value!, {
                 placement: local.placement,
@@ -103,13 +108,14 @@ export function Dropdown(props: RequireChildren<Props>) {
             });
 
             Object.assign(dropdownRef.value!.style, {
-                left: `${x}px`,
-                top: `${y}px`,
+                top: "0",
+                left: "0",
+                transform: `translate(${roundByDPR(x)}px,${roundByDPR(y)}px)`,
             });
         };
 
         const cleanup = autoUpdate(targetRef, dropdownRef.value!, compute);
-        onCleanup(cleanup);
+        onCleanup(() => cleanup());
     });
 
     // main state updates here

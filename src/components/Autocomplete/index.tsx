@@ -232,7 +232,7 @@ export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>
             />
 
             <Dropdown
-                class={cx(filteredItems().length < 1 && "hidden")}
+                class={cx(filteredItems().length < 1 && "invisible")}
                 targetRef={containerRef.value}
                 opened={opened()}
                 ref={setDropdownRef}
