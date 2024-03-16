@@ -56,7 +56,7 @@ export function Modal(props: RequireChildren<Props>) {
         <Portal>
             <input ref={setInputRef} type="checkbox" id={modalId} class="modal-toggle" />
 
-            <div ref={setDialogRef} class="modal">
+            <div ref={setDialogRef} class={cx("modal", !local.open && "pointer-events-none")}>
                 <div
                     class={cx("modal-box", local.class)}
                     ref={mergeRefs(local.ref, setModalBoxRef)}
