@@ -29,7 +29,6 @@ export function Modal(props: RequireChildren<Props>) {
 
     const [dialogRef, setDialogRef] = useRef<HTMLDivElement>();
     const [inputRef, setInputRef] = useRef<HTMLInputElement>();
-    const [modalBoxRef, setModalBoxRef] = useRef<HTMLDivElement>();
 
     const modalId = createUniqueId();
 
@@ -49,19 +48,18 @@ export function Modal(props: RequireChildren<Props>) {
     createEffect(() => {
         if (!local.open) return;
 
-        useClickOutside(modalBoxRef.value, () => local.setOpen(false));
+        useClickOutside(dialogRef.value, () => local.setOpen(false));
     });
 
     return (
         <Portal>
             <input ref={setInputRef} type="checkbox" id={modalId} class="modal-toggle" />
 
-            <div ref={setDialogRef} class={cx("modal", !local.open && "pointer-events-none")}>
-                <div
-                    class={cx("modal-box", local.class)}
-                    ref={mergeRefs(local.ref, setModalBoxRef)}
-                    {...others}
-                >
+            <div
+                ref={mergeRefs(local.ref, setDialogRef)}
+                class={cx("modal", !local.open && "pointer-events-none")}
+            >
+                <div class={cx("modal-box", local.class)} {...others}>
                     <Stack>
                         <Group class={local.title ? "justify-between" : "justify-end"}>
                             {local.title && (
