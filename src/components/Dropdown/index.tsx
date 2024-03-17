@@ -12,7 +12,7 @@ import { createEventListener } from "@solid-primitives/event-listener";
 import { mergeRefs } from "@solid-primitives/refs";
 import { ComponentProps, createEffect, createSignal, onCleanup, splitProps } from "solid-js";
 
-import { useClickOutside, useRef } from "~/hooks";
+import { useClickOutside } from "~/hooks";
 import { MaybeAccessor, PropsWith, RequireChildren } from "~/types";
 import { cva, CvaProps, cx } from "~/utils";
 
@@ -46,7 +46,7 @@ export function Dropdown(props: RequireChildren<Props>) {
         "ref",
     ]);
 
-    const [dropdownRef, setDropdownRef] = useRef<HTMLDivElement>();
+    const [dropdownRef, setDropdownRef] = createSignal<HTMLDivElement>();
 
     const [opened, setOpened] = createSignal(false);
 
@@ -88,7 +88,7 @@ export function Dropdown(props: RequireChildren<Props>) {
             middleware.push(
                 size({
                     apply: ({ rects }) => {
-                        Object.assign(dropdownRef.value!.style, {
+                        Object.assign(dropdownRef()!.style, {
                             width: `${rects.reference.width}px`,
                         });
                     },
@@ -102,19 +102,19 @@ export function Dropdown(props: RequireChildren<Props>) {
         };
 
         const compute = async () => {
-            const { x, y } = await computePosition(targetRef, dropdownRef.value!, {
+            const { x, y } = await computePosition(targetRef, dropdownRef()!, {
                 placement: local.placement,
                 middleware,
             });
 
-            Object.assign(dropdownRef.value!.style, {
+            Object.assign(dropdownRef()!.style, {
                 top: "0",
                 left: "0",
                 transform: `translate(${roundByDPR(x)}px,${roundByDPR(y)}px)`,
             });
         };
 
-        const cleanup = autoUpdate(targetRef, dropdownRef.value!, compute);
+        const cleanup = autoUpdate(targetRef, dropdownRef()!, compute);
         onCleanup(() => cleanup());
     });
 
@@ -135,7 +135,7 @@ export function Dropdown(props: RequireChildren<Props>) {
         }
 
         createEventListener(targetRef, "click", toggle);
-        useClickOutside([dropdownRef.value, targetRef], hide);
+        useClickOutside([dropdownRef(), targetRef], hide);
     });
 
     return (

@@ -15,7 +15,7 @@ import {
     splitProps,
 } from "solid-js";
 
-import { useClickOutside, useRef } from "~/hooks";
+import { useClickOutside } from "~/hooks";
 import { ForbidChildren, MiniSetter, PropsWith } from "~/types";
 import { clamp, cx } from "~/utils";
 
@@ -72,13 +72,13 @@ export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>
     const [opened, setOpened] = createSignal(false);
     const [navigatingOn, setNavigatingOn] = createSignal(-1);
 
-    const [inputRef, setInputRef] = useRef<HTMLInputElement>();
-    const [dropdownRef, setDropdownRef] = useRef<HTMLDivElement>();
-    const [containerRef, setContainerRef] = useRef<HTMLDivElement>();
+    const [inputRef, setInputRef] = createSignal<HTMLInputElement>();
+    const [dropdownRef, setDropdownRef] = createSignal<HTMLDivElement>();
+    const [containerRef, setContainerRef] = createSignal<HTMLDivElement>();
 
     const onInput = (e: { target: HTMLInputElement }) => setInputValueAcc()(e.target.value);
     createEventListener(
-        () => inputRef.value,
+        () => inputRef(),
         "input",
         event => onInput(event as unknown as InputEvent & { target: HTMLInputElement })
     );
@@ -126,13 +126,13 @@ export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>
     };
 
     createEventListener(
-        () => inputRef.value,
+        () => inputRef(),
         "focus",
         () => setOpened(true)
     );
 
     useClickOutside(
-        () => [containerRef.value, dropdownRef.value],
+        () => [containerRef(), dropdownRef()],
         () => setOpened(false)
     );
 
@@ -149,7 +149,7 @@ export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>
             });
         };
 
-        createEventListener(inputRef.value, "keydown", e => {
+        createEventListener(inputRef(), "keydown", e => {
             if (e.code === "ArrowDown") {
                 e.preventDefault();
 
@@ -233,7 +233,7 @@ export function Autocomplete<T extends ItemLike>(props: ForbidChildren<Props<T>>
 
             <Dropdown
                 class={cx(filteredItems().length < 1 && "invisible")}
-                targetRef={containerRef.value}
+                targetRef={containerRef()}
                 opened={opened()}
                 ref={setDropdownRef}
                 fullWidth
