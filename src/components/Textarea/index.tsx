@@ -45,8 +45,8 @@ export function Textarea(props: ForbidChildren<Props>) {
 
             <ControlledTextarea
                 class={cx(
-                    textarea({ class: local.class, bordered: local.bordered }),
-                    "text-inherit"
+                    "text-inherit",
+                    textarea({ class: local.class, bordered: local.bordered })
                 )}
                 {...others}
             />

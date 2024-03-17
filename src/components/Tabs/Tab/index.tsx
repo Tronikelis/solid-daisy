@@ -30,8 +30,8 @@ export function Tab(props: RequireChildren<Props>) {
     return (
         <div
             class={cx(
-                tab({ class: local.class }),
-                context.selected === local.value && "tab-active"
+                context.selected === local.value && "tab-active",
+                tab({ class: local.class })
             )}
             ref={mergeRefs(local.ref, el => (ref = el))}
             {...others}

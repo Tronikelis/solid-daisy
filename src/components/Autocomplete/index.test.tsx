@@ -22,7 +22,7 @@ describe("<Autocomplete />", () => {
         expect(container).toMatchSnapshot();
     });
 
-    it("dropdown opens on input focus and closes on blur", async () => {
+    it("dropdown does not open when there are no items", async () => {
         const screen = render(() => (
             <>
                 <div>outside</div>
@@ -32,16 +32,29 @@ describe("<Autocomplete />", () => {
 
         await userEvent.click(screen.getByTestId("input"));
 
-        expect(screen.getByTestId("dropdown")).toHaveClass("visible");
-
-        await userEvent.click(screen.getByText("outside"));
-
         expect(screen.getByTestId("dropdown")).toHaveClass("invisible");
     });
 
     describe("with items", () => {
         beforeEach(() => {
             props.items = [{ value: "foobar" }, { value: "let's go" }];
+        });
+
+        it("dropdown opens on input focus and closes on blur", async () => {
+            const screen = render(() => (
+                <>
+                    <div>outside</div>
+                    <Autocomplete {...props} data-testid="input" />
+                </>
+            ));
+
+            await userEvent.click(screen.getByTestId("input"));
+
+            expect(screen.getByTestId("dropdown")).toHaveClass("visible");
+
+            await userEvent.click(screen.getByText("outside"));
+
+            expect(screen.getByTestId("dropdown")).toHaveClass("invisible");
         });
 
         it("dropdown shows items", () => {

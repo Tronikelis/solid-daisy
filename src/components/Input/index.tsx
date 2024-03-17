@@ -80,16 +80,16 @@ export function Input(props: ForbidChildren<Props>) {
             <Stack
                 {...local.containerProps}
                 class={cx(
+                    "justify-center text-inherit",
+                    local.rightSection && "pr-2",
+                    local.leftSection && "pl-2",
                     container({
                         bordered: local.bordered,
                         class: local.containerProps?.class,
                         color: local.color,
                         disabled: others.disabled,
                         size: local.size,
-                    }),
-                    "justify-center text-inherit",
-                    local.rightSection && "pr-2",
-                    local.leftSection && "pl-2"
+                    })
                 )}
             >
                 <Group
