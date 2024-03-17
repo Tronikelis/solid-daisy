@@ -17,7 +17,7 @@ import { MaybeAccessor, PropsWith, RequireChildren } from "~/types";
 import { cva, CvaProps, cx } from "~/utils";
 
 const dropdown = cva(
-    "fixed left-0 top-0 z-[3000] rounded-box border-2 border-base-200 bg-base-100 opacity-0 shadow transition-opacity duration-200"
+    "fixed left-0 top-0 z-[3000] rounded-box border-2 border-base-200 bg-base-100 shadow transition-opacity duration-200"
 );
 
 type Props = PropsWith<
@@ -144,7 +144,7 @@ export function Dropdown(props: RequireChildren<Props>) {
             class={cx(
                 opened()
                     ? "visible opacity-100"
-                    : "invisible opacity-0 [&_*]:!pointer-events-none",
+                    : "!pointer-events-none invisible opacity-0 [&_*]:!pointer-events-none",
                 dropdown({ class: local.class })
             )}
             {...others}
