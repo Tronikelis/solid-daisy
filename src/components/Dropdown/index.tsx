@@ -146,7 +146,9 @@ export function Dropdown(props: RequireChildren<Props>) {
                 opened()
                     ? "visible opacity-100"
                     : "!pointer-events-none invisible opacity-0 [&_*]:!pointer-events-none",
-                dropdown({ class: local.class })
+                dropdown({ class: local.class }),
+                // force override as strategy is fixed
+                "fixed"
             )}
             {...others}
         >
