@@ -38,8 +38,6 @@ export function useClickOutside(
             : isInside(el, event.target as Node);
 
         if (!inside) {
-            console.log("NOT INSIDE");
-            console.log("target", event.target, "inside", el);
             cb();
         }
     });
