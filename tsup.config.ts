@@ -5,7 +5,6 @@ const presetOptions: preset.PresetOptions = {
     entries: {
         entry: "./src/index.ts",
     },
-    drop_console: true,
 };
 
 export default defineConfig(config => {

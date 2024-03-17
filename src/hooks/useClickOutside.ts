@@ -33,6 +33,8 @@ export function useClickOutside(
             return;
         }
 
+        console.log("target", event.target, "inside", el);
+
         const inside = Array.isArray(el)
             ? el.some(x => isInside(x!, event.target as Node))
             : isInside(el, event.target as Node);
