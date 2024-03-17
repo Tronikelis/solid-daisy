@@ -143,7 +143,9 @@ export function Dropdown(props: RequireChildren<Props>) {
             ref={mergeRefs(local.ref, setDropdownRef)}
             class={cx(
                 dropdown({ class: local.class }),
-                opened() ? "visible opacity-100" : "pointer-events-none invisible opacity-0"
+                opened()
+                    ? "visible opacity-100"
+                    : "invisible opacity-0 [&_*]:!pointer-events-none"
             )}
             {...others}
         >

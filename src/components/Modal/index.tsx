@@ -60,7 +60,7 @@ export function Modal(props: RequireChildren<Props>) {
                     class={cx(
                         "modal-box",
                         local.class,
-                        local.open ? "pointer-events-auto" : "pointer-events-none"
+                        !local.open && "[&_*]:!pointer-events-none"
                     )}
                     ref={mergeRefs(local.ref, setModalRef)}
                     {...others}
