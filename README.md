@@ -37,7 +37,7 @@
     -   [Toggle](#toggle)
     -   [Tooltip](#tooltip)
 -   [Creating your own components](#creating-your-own-components)
--   [A note about useRef](#a-note-about-useref)
+-   [A note about nested refs](#a-note-about-nested-refs)
 -   [Misc utils](#misc-utils)
 
 ## Install
@@ -567,11 +567,9 @@ export function CardWithAvatar(props: ForbidChildren<Props>) {
 }
 ```
 
-## A note about useRef
+## A note about nested refs
 
-You can notice this lib exports `useRef` why not just `let node`
-
-Well, `useRef` supports _all_ ref assignments, even in `wrapperProps`
+Use `createSignal` when assigning refs that are not `ref={}` but a different property
 
 Example
 
@@ -590,7 +588,7 @@ let wrapperRef: HTMLDivElement | undefined;
  That's why we do it like this
 */
 
-const [wrapperRef, setWrapperRef] = useRef<HTMLDivElement>()
+const [wrapperRef, setWrapperRef] = createSignal<HTMLDivElement>()
 
 // both options work, because setWrapperRef is a setter,
 // which solid will call
@@ -602,11 +600,9 @@ const [wrapperRef, setWrapperRef] = useRef<HTMLDivElement>()
 
 // use like
 onMount(() => {
-    console.log(wrapperRef.value)
+    console.log(wrapperRef())
 })
 ```
-
-That's why I recommend to always use `useRef` for consistency
 
 ## Misc utils
 

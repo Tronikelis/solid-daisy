@@ -1,8 +1,14 @@
 import { mergeRefs } from "@solid-primitives/refs";
-import { ComponentProps, createEffect, createUniqueId, splitProps } from "solid-js";
+import {
+    ComponentProps,
+    createEffect,
+    createSignal,
+    createUniqueId,
+    splitProps,
+} from "solid-js";
 import { Portal } from "solid-js/web";
 
-import { useClickOutside, useRef } from "~/hooks";
+import { useClickOutside } from "~/hooks";
 import { MiniSetter, PropsWith, RequireChildren } from "~/types";
 import { cx } from "~/utils";
 
@@ -27,28 +33,28 @@ export function Modal(props: RequireChildren<Props>) {
         "class",
     ]);
 
-    const [modalRef, setModalRef] = useRef<HTMLDivElement>();
-    const [inputRef, setInputRef] = useRef<HTMLInputElement>();
+    const [modalRef, setModalRef] = createSignal<HTMLDivElement>();
+    const [inputRef, setInputRef] = createSignal<HTMLInputElement>();
 
     const modalId = createUniqueId();
 
     createEffect(() => {
         if (!modalRef) return;
-        if (!inputRef.value) return;
+        if (!inputRef()) return;
 
         const open = local.open;
         if (open) {
-            inputRef.value.checked = true;
+            inputRef()!.checked = true;
             return;
         }
 
-        inputRef.value.checked = false;
+        inputRef()!.checked = false;
     });
 
     createEffect(() => {
         if (!local.open) return;
 
-        useClickOutside(modalRef.value, () => local.setOpen(false));
+        useClickOutside(modalRef(), () => local.setOpen(false));
     });
 
     return (
