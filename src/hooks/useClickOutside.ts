@@ -37,6 +37,8 @@ export function useClickOutside(
             ? el.some(x => isInside(x!, event.target as Node))
             : isInside(el, event.target as Node);
 
-        if (!inside) cb();
+        if (!inside) {
+            cb();
+        }
     });
 }

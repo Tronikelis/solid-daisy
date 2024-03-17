@@ -19,7 +19,7 @@ exports[`<Autocomplete /> > renders correctly 1`] = `
     </div>
   </div>
   <div
-    class="fixed left-0 top-0 z-[3000] rounded-box border-2 border-base-200 bg-base-100 shadow transition-opacity duration-200 pointer-events-none invisible opacity-0"
+    class="fixed left-0 top-0 z-[3000] rounded-box border-2 border-base-200 bg-base-100 shadow transition-opacity duration-200 invisible opacity-0 [&_*]:!pointer-events-none"
     data-testid="dropdown"
   >
     <ul
