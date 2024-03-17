@@ -103,6 +103,7 @@ export function Dropdown(props: RequireChildren<Props>) {
 
         const compute = async () => {
             const { x, y } = await computePosition(targetRef, dropdownRef()!, {
+                strategy: "fixed",
                 placement: local.placement,
                 middleware,
             });
