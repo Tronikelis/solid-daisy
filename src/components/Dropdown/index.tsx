@@ -10,7 +10,14 @@ import {
 } from "@floating-ui/dom";
 import { createEventListener } from "@solid-primitives/event-listener";
 import { mergeRefs } from "@solid-primitives/refs";
-import { ComponentProps, createEffect, createSignal, onCleanup, splitProps } from "solid-js";
+import {
+    ComponentProps,
+    createEffect,
+    createSignal,
+    on,
+    onCleanup,
+    splitProps,
+} from "solid-js";
 
 import { useClickOutside } from "~/hooks";
 import { MaybeAccessor, PropsWith, RequireChildren } from "~/types";
@@ -27,8 +34,8 @@ type Props = PropsWith<
         placement?: Placement;
         offset?: number;
         hover?: boolean;
-
         opened?: boolean;
+        onOpenChange?: (open: boolean) => void;
     },
     [ComponentProps<"div">, CvaProps<typeof dropdown>]
 >;
@@ -44,6 +51,7 @@ export function Dropdown(props: RequireChildren<Props>) {
         "hover",
         "opened",
         "ref",
+        "onOpenChange",
     ]);
 
     const [dropdownRef, setDropdownRef] = createSignal<HTMLDivElement>();
@@ -138,6 +146,12 @@ export function Dropdown(props: RequireChildren<Props>) {
         createEventListener(targetRef, "click", toggle);
         useClickOutside([dropdownRef(), targetRef], hide);
     });
+
+    createEffect(
+        on(opened, open => {
+            local.onOpenChange?.(open);
+        })
+    );
 
     return (
         <div
