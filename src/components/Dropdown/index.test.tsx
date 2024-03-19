@@ -50,9 +50,13 @@ describe("<Dropdown />", () => {
             </>
         ));
 
+        // on mount
+        expect(onOpenChange).toBeCalledTimes(1);
+        expect(onOpenChange).toBeCalledWith(false);
+
         await userEvent.click(screen.getByText("target"));
 
-        // on mount + change
+        // change
         expect(onOpenChange).toBeCalledTimes(2);
         expect(onOpenChange).toBeCalledWith(true);
     });
