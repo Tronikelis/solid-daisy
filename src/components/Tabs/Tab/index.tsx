@@ -7,7 +7,13 @@ import { cva, CvaProps, cx } from "~/utils";
 
 import { TabsContext } from "../context";
 
-const tab = cva("tab");
+const tab = cva("tab", {
+    variants: {
+        disabled: {
+            true: "tab-disabled",
+        },
+    },
+});
 
 type Props = PropsWith<
     {
@@ -31,7 +37,7 @@ export function Tab(props: RequireChildren<Props>) {
         <div
             class={cx(
                 context.selected === local.value && "tab-active",
-                tab({ class: local.class })
+                tab({ class: local.class, disabled: context.disabled })
             )}
             ref={mergeRefs(local.ref, el => (ref = el))}
             {...others}

@@ -36,4 +36,16 @@ describe("<Tabs />", () => {
         expect(screen.getByText("foo")).not.toHaveClass("tab-active");
         expect(screen.getByText("bar")).toHaveClass("tab-active");
     });
+
+    it("disables the tab", () => {
+        const screen = render(() => (
+            <Tabs disabled selected="" setSelected={vi.fn()}>
+                <Tab value="" data-testid="tab-foo">
+                    foo
+                </Tab>
+            </Tabs>
+        ));
+
+        expect(screen.getByTestId("tab-foo")).toHaveClass("tab-disabled");
+    });
 });
