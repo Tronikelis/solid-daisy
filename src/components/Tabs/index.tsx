@@ -25,6 +25,8 @@ type Props<T extends string> = PropsWith<
     {
         selected: T;
         setSelected: MiniSetter<T>;
+
+        disabled?: boolean;
     },
     [CvaProps<typeof tabs>, ComponentProps<"div">]
 >;
