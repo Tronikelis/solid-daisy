@@ -56,12 +56,21 @@ module.exports = {
 };
 ```
 
+```jsonc
+// tsconfig.json
+{
+    // --
+    "esModuleInterop": true,
+    // --
+}
+```
+
 ## Components
 
 ### Accordion
 
 ```tsx
-import { Accordion, AccordionItem } from "solid-daisy"
+import { Accordion, AccordionItem } from "solid-daisy";
 
 <Accordion
     joined={false || undefined}
@@ -71,26 +80,26 @@ import { Accordion, AccordionItem } from "solid-daisy"
     <AccordionItem value="value" title="title">
         Opened contents
     </AccordionItem>
-</Accordion>
+</Accordion>;
 ```
 
 ### Alert
 
 ```tsx
-import { Alert } from "solid-daisy"
+import { Alert } from "solid-daisy";
 
 <Alert
     color={"info" || "success" || "error" || "warning" || undefined}
     icon={<IconPhone /> || undefined}
 >
     Contents
-</Alert>
+</Alert>;
 ```
 
 ### Autocomplete
 
 ```tsx
-import { Autocomplete } from "solid-daisy"
+import { Autocomplete } from "solid-daisy";
 
 <Autocomplete
     value={selectedArr}
@@ -100,32 +109,34 @@ import { Autocomplete } from "solid-daisy"
     setInputValue={setInputValue || undefined}
     items={itemsArr}
     filter={((item, inputValue) => true) || undefined}
-    listComponent={((item) => <div>{item}</div>) || undefined}
-    selectedComponent={((item, onDeleteItem) => (
-        <div>
-            <span onClick={onDeleteItem}>x</span>
-            {item}
-        </div>
-    )) || undefined}
+    listComponent={(item => <div>{item}</div>) || undefined}
+    selectedComponent={
+        ((item, onDeleteItem) => (
+            <div>
+                <span onClick={onDeleteItem}>x</span>
+                {item}
+            </div>
+        )) || undefined
+    }
     closeOnSelect={false || undefined}
-/>
+/>;
 ```
 
 ### Avatar
 
 ```tsx
-import { Avatar } from "solid-daisy"
+import { Avatar } from "solid-daisy";
 
 <Avatar
     size={"xs" || "sm" || "md" || "lg" || undefined}
     src={"https://cdn.com/img.png" || undefined}
-/>
+/>;
 ```
 
 ### Badge
 
 ```tsx
-import { Badge } from "solid-daisy"
+import { Badge } from "solid-daisy";
 
 <Badge
     color={
@@ -144,26 +155,23 @@ import { Badge } from "solid-daisy"
     outlined={false || undefined}
 >
     Contents
-</Badge>
-
+</Badge>;
 ```
 
 ### Breadcrumbs
 
 ```tsx
-import { Breadcrumbs, BreadcrumbsItem } from "solid-daisy"
+import { Breadcrumbs, BreadcrumbsItem } from "solid-daisy";
 
 <Breadcrumbs>
-    <BreadcrumbsItem>
-        Contents
-    </BreadcrumbsItem>
-</Breadcrumbs>
+    <BreadcrumbsItem>Contents</BreadcrumbsItem>
+</Breadcrumbs>;
 ```
 
 ### Button
 
 ```tsx
-import { Button } from "solid-daisy"
+import { Button } from "solid-daisy";
 
 <Button
     outlined={false || undefined}
@@ -187,27 +195,23 @@ import { Button } from "solid-daisy"
     loading={false || undefined}
 >
     Contents
-</Button>
+</Button>;
 ```
 
 ### Card
 
 ```tsx
-import { Card } from "solid-daisy"
+import { Card } from "solid-daisy";
 
-<Card
-    withShadow={true || undefined}
-    bordered={true || undefined}
-    compact={false || undefined}
->
+<Card withShadow={true || undefined} bordered={true || undefined} compact={false || undefined}>
     Contents
-</Card>
+</Card>;
 ```
 
 ### Checkbox
 
 ```tsx
-import { Checkbox } from "solid-daisy"
+import { Checkbox } from "solid-daisy";
 
 <Checkbox
     label={"label" || undefined}
@@ -223,23 +227,21 @@ import { Checkbox } from "solid-daisy"
         undefined
     }
     wrapperProps={{} || undefined}
-/>
+/>;
 ```
 
 ### Divider
 
 ```tsx
-import { Divider } from "solid-daisy"
+import { Divider } from "solid-daisy";
 
-<Divider
-    vertical={false || undefined}
-/>
+<Divider vertical={false || undefined} />;
 ```
 
 ### Dropdown
 
 ```tsx
-import { Dropdown } from "solid-daisy"
+import { Dropdown } from "solid-daisy";
 
 <Dropdown
     targetRef={node.value}
@@ -250,31 +252,29 @@ import { Dropdown } from "solid-daisy"
     opened={false || undefined}
 >
     Contents
-</Dropdown>
+</Dropdown>;
 ```
 
 ### Group
 
 ```tsx
-import { Group } from "solid-daisy"
+import { Group } from "solid-daisy";
 
-<Group>
-    Contents
-</Group>
+<Group>Contents</Group>;
 ```
 
 ### Image
 
 ```tsx
-import { Image } from "solid-daisy"
+import { Image } from "solid-daisy";
 
-<Image />
+<Image />;
 ```
 
 ### Input
 
 ```tsx
-import { Input } from "solid-daisy"
+import { Input } from "solid-daisy";
 
 <Input
     bordered={true || undefined}
@@ -298,13 +298,13 @@ import { Input } from "solid-daisy"
     rightSection={<Icon /> || undefined}
     wrapperProps={{} || undefined}
     containerProps={{} || undefined}
-/>
+/>;
 ```
 
 ### Link
 
 ```tsx
-import { Link } from "solid-daisy"
+import { Link } from "solid-daisy";
 
 <Link
     italic={false || undefined}
@@ -322,37 +322,31 @@ import { Link } from "solid-daisy"
     }
 >
     Contents
-</Link>
+</Link>;
 ```
 
 ### Loading
 
 ```tsx
-import { Loading } from "solid-daisy"
+import { Loading } from "solid-daisy";
 
-<Loading
-    size={"xs" || "sm" || "md" || "lg" || undefined}
-/>
+<Loading size={"xs" || "sm" || "md" || "lg" || undefined} />;
 ```
 
 ### Modal
 
 ```tsx
-import { Modal } from "solid-daisy"
+import { Modal } from "solid-daisy";
 
-<Modal
-    open={open()}
-    setOpen={setOpen}
-
->
+<Modal open={open()} setOpen={setOpen}>
     Contents
-</Modal>
+</Modal>;
 ```
 
 ### Pagination
 
 ```tsx
-import { Pagination } from "solid-daisy"
+import { Pagination } from "solid-daisy";
 
 <Pagination
     total={2 || undefined}
@@ -364,13 +358,13 @@ import { Pagination } from "solid-daisy"
     leftArrowIcon={<Icon /> || undefined}
     rightArrowIcon={<Icon /> || undefined}
     dotsIcon={<Icon /> || undefined}
-/>
+/>;
 ```
 
 ### Radio
 
 ```tsx
-import { Radio, RadioItem } from "solid-daisy"
+import { Radio, RadioItem } from "solid-daisy";
 
 <Radio
     color={
@@ -403,23 +397,21 @@ import { Radio, RadioItem } from "solid-daisy"
         label={"label" || undefined}
         wrapperProps={{} || undefined}
     />
-</Radio>
+</Radio>;
 ```
 
 ### Stack
 
 ```tsx
-import { Stack } from "solid-daisy"
+import { Stack } from "solid-daisy";
 
-<Stack>
-    Contents
-</Stack>
+<Stack>Contents</Stack>;
 ```
 
 ### Table
 
 ```tsx
-import { Table } from "solid-daisy"
+import { Table } from "solid-daisy";
 
 <Table
     striped={false || undefined}
@@ -428,13 +420,13 @@ import { Table } from "solid-daisy"
 >
     <thead></thead>
     <tbody></tbody>
-</Table>
+</Table>;
 ```
 
 ### Tabs
 
 ```tsx
-import { Tabs, Tab } from "solid-daisy"
+import { Tabs, Tab } from "solid-daisy";
 
 <Tabs
     variant={"boxed" || "lifted" || "bordered" || undefined}
@@ -443,63 +435,51 @@ import { Tabs, Tab } from "solid-daisy"
     setSelected={setSelected}
 >
     <Tab value="x">Contents</Tab>
-</Tabs>
+</Tabs>;
 ```
 
 ### Text
 
 ```tsx
-import { Text } from "solid-daisy"
+import { Text } from "solid-daisy";
 
 <Text
     dimmed={false || undefined}
     italic={false || undefined}
     bold={false || undefined}
-    size={
-        "xs" ||
-        "sm" ||
-        "md" ||
-        "lg" ||
-        "xl" ||
-        "xl2" ||
-        "xl4" ||
-        undefined
-    }
+    size={"xs" || "sm" || "md" || "lg" || "xl" || "xl2" || "xl4" || undefined}
     centered={false || undefined}
     underlined={false || undefined}
     breakWords={false || undefined}
 >
     Contents
-</Text>
+</Text>;
 ```
 
 ### Textarea
 
 ```tsx
-import { Textarea } from "solid-daisy"
+import { Textarea } from "solid-daisy";
 
 <Textarea
     label={"label" || undefined}
     description={"description" || undefined}
     wrapperProps={{} || undefined}
-/>
+/>;
 ```
 
 ### Toggle
 
 ```tsx
-import { Toggle } from "solid-daisy"
+import { Toggle } from "solid-daisy";
 
-<Toggle
-    label={"label" || undefined}
-    wrapperProps={{} || undefined}
-/>
+<Toggle label={"label" || undefined} wrapperProps={{} || undefined} />;
 ```
 
 ### Tooltip
 
 ```tsx
-import { Tooltip } from "solid-daisy"
+import { Tooltip } from "solid-daisy";
 
 <Tooltip
     label={"content"}
@@ -517,7 +497,7 @@ import { Tooltip } from "solid-daisy"
     }
 >
     Hover me
-</Tooltip>
+</Tooltip>;
 ```
 
 ## Creating your own components
@@ -538,21 +518,24 @@ Optional util types
 Example (CardWithAvatar)
 
 ```tsx
-import { cva, PropsWith, cx, Card, Avatar, ForbidChildren } from "solid-daisy"
-import { ComponentProps, splitProps } from "solid-js"
+import { cva, PropsWith, cx, Card, Avatar, ForbidChildren } from "solid-daisy";
+import { ComponentProps, splitProps } from "solid-js";
 
 const cardWithAvatar = cva("base classes", {
     variants: {
         // read class-variance-authority docs
-    }
-})
+    },
+});
 
-type Props = PropsWith<{
-    hello: string
-}, [ComponentProps<typeof Card>]>
+type Props = PropsWith<
+    {
+        hello: string;
+    },
+    [ComponentProps<typeof Card>]
+>;
 
 export function CardWithAvatar(props: ForbidChildren<Props>) {
-    const [local, others] = splitProps(props, ["hello", "class"])
+    const [local, others] = splitProps(props, ["hello", "class"]);
 
     return (
         <Card
@@ -563,7 +546,7 @@ export function CardWithAvatar(props: ForbidChildren<Props>) {
         >
             <Avatar src={local.hello} />
         </Card>
-    )
+    );
 }
 ```
 
